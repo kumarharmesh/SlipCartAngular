@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class='row'>
+        <div class="col-md-12" style="height:50px"></div>
+    </div>
+    <div class='row'>
+        <div class="col-md-12" style="height:20px"></div>
+    </div>
+    <div class='row'>
+            <div class="col-md-2"></div>
+        <div class="col-md-8 text-right">
+        <button (click)="placeOrder()" class="btn btn-primary">Place Order</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2" style="height:100px"></div>
+        <div class="col-md-8" style="height:100px">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of products">
+                    <td>{{p.title}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.category}}</td>
+                    <td>
+                        <select class="form-control" [(ngModel)]="p.quantity">
+                            <option value="1" selected>1</option> 
+                            <option value="{{i}}" *ngFor="let i of quantityRange">{{i}}</option>
+                        </select>
+                       
+                    </td>
+                    <td class="text-center">
+                        <button (click)="removeFromCart(p.productId)" class="btn btn-success">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="col-md-2" style="height:100px"></div>
+    </div>
+</div>

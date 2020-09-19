@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "Origin"]
+	url = https://kumarharmesh@dev.azure.com/kumarharmesh/SkipKartAngularAz/_git/SkipKartAngularAz
+	fetch = +refs/heads/*:refs/remotes/Origin/*
+[gui]
+	wmstate = normal
+	geometry = 893x435+104+104 175 196

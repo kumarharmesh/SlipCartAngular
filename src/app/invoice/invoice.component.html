@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class='row'>
+        <div class="col-md-12" style="height:20px"></div>
+    </div>
+    <div class='row'>
+        <div class="col-md-2" style="height:20px">      </div>
+        <div class="col-md-7 text-center"><h4>Customer Invoice</h4></div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class='row'>
+            <div class="col-md-2">
+                
+            </div>
+        <div class="col-md-7 text-right">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Customer Name</th>
+                    <td>{{invoiceData.customerOrderDetails.customerName}}</td>
+                
+                    <th>Customer Email</th>
+                    <td>{{invoiceData.customerOrderDetails.customerEMail}}</td>
+                </tr>
+                <tr>
+                    <th>Contact No</th>
+                    <td>{{invoiceData.customerOrderDetails.contactNo}}</td>
+                
+                    <th>Order Id</th>
+                    <td>{{invoiceData.customerOrderDetails.orderId}}</td>
+                </tr>
+                <tr>
+                    <th>Order Date</th>
+                    <td>{{invoiceData.customerOrderDetails.orderDate|date:mediumDate}}</td>
+               
+                    <th>Total Amount</th>
+                    <td class='text-danger'>{{invoiceData.customerOrderDetails.amount}}</td>
+                </tr>
+                
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2" style="height:100px"></div>
+        <div class="col-md-8" style="height:100px">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of invoiceData.products">
+                    <td>{{p.title}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.category}}</td>
+                   <td>{{p.quantity}}</td>
+                   <td>{{p.price*p.quantity}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-right"><h5>Total</h5></td>
+                    <td><h5>{{invoiceData.customerOrderDetails.amount}}</h5></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="col-md-2" style="height:100px"></div>
+    </div>
+</div>

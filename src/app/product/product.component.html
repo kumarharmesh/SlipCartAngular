@@ -1,0 +1,55 @@
+<div class="container container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="height:50px"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+                <div class="dropdown" data-toggle="dropdown">
+                        <button class="btn btn-success dropdown-toggle" style="width:200px" >
+                            {{btnText}}
+                            <span class="caret"></span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-left">
+                            <ng-container  *ngFor="let c of categories" >
+                            <a href="#" (click)="GetProductsCategoryWise(c)" class="dropdown-item">{{c}}</a>
+                        </ng-container>
+                        </div>
+                    </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-danger">
+                {{error}}
+            </div>
+        </div>
+            <div class="col-md-3">
+                    <div style="text-align:right">
+                         <button type="button" (click)="productsExistInCart()" class="btn btn-danger" >View Cart</button>
+                    </div>
+        </div>
+    
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Expiry</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of products">
+            <td>{{p.title}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.category}}</td>
+            <td>{{p.expiry|date:mediumDate}}</td>
+            <td><a href="#" (click)="addToCart(p.productId)" class="btn btn-primary">Add to Cart</a></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+</div>
+</div>
